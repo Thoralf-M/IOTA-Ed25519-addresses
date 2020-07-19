@@ -168,6 +168,7 @@ dependencies = [
  "byteorder",
  "ed25519-dalek",
  "multihash",
+ "rand_core",
 ]
 
 [[package]]

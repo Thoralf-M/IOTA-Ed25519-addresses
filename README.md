@@ -9,8 +9,10 @@ Then you can use it like here https://github.com/Thoralf-M/IOTA-Ed25519-addresse
 `cargo run --release`
 
 ```
+Random seed: 2HViXjPaUB76ope484tDJ4sYKUpoMUJauCfEbv3QJrh3
+Address from random_wallet: UcEf4YPWyBa81sYHysN1JXYBXiVHYEyWEpjNnc2yJTvG
 Address: QbmLnx2zrQQJ1U5JyR54qrzWgQvqiD4wNjoRKYqCjo8q
-Generated addresses in 320.80µs
+Generated addresses in 279.40µs
 [
     "0: QbmLnx2zrQQJ1U5JyR54qrzWgQvqiD4wNjoRKYqCjo8q",
     "1: LbNeQyMtf2HF1D6oQWabsrd6wPX1CUhgacz8htoN6vJs",
