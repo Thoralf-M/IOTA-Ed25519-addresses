@@ -35,12 +35,16 @@ impl Wallet {
       .collect();
     sub_seed
   }
-  pub fn address(&self, index: usize) -> String {
+  pub fn address_bytes(&self, index: usize) -> Vec<u8> {
     let subseed = self.sub_seed(index as u64);
     let private_key = ed25519_dalek::SecretKey::from_bytes(&subseed).unwrap();
     let public_key: PublicKey = PublicKey::from(&private_key);
     let address_bytes = Blake2b256::digest(&public_key.to_bytes());
-    bs58::encode(&[&[1], &address_bytes[4..]].concat()).into_string()
+    //add VersionED25519 byte
+    [&[1], &address_bytes[4..]].concat()
+  }
+  pub fn address(&self, index: usize) -> String {
+    bs58::encode(self.address_bytes(index)).into_string()
   }
   pub fn get_base58_seed(&self) -> String {
     bs58::encode(&self.seed).into_string()
